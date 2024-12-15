@@ -15,13 +15,13 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin: 'http://localhost:5000',
+    origin: 'http://localhost:80',
     credentials: true
 }))
 app.use(router)
 app.use("/api/news", router);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
     console.log(`Successfully connected, ${PORT}`);
 })

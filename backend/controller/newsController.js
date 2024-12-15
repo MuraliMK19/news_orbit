@@ -15,4 +15,25 @@ const addNews = async (req, res) => {
         res.status(500).json({ message: "News posting unsuccessful", error })
     }
 }
-module.exports = addNews;
+const getNews = async (req, res) => {
+    try {
+        const Allnews = await news1.find()
+        res.status(201).json(Allnews)
+    } catch (error) {
+        res.status(500).json({ message: "Failed to retrieve", error })
+    }
+}
+
+const getoneNews = async (req, res) => {
+    const { id } = req.params
+    try {
+        const getone = await news1.findById(id)
+        if (!getone) {
+            res.status(404).json({ message: "News Not Found" })
+        }
+        res.status(201).json(getone)
+    } catch (error) {
+        res.status(500).json({ message: "Failed to retrieve" })
+    }
+}
+module.exports = { addNews, getNews, getoneNews };
