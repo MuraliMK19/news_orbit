@@ -2,6 +2,6 @@ const express = require("express");
 const router = express.Router();
 const addNews = require('../controller/newsController.js')
 
-router.post("/", addNews)
+router.post("/add", addNews)
 
 module.exports = router;

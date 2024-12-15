@@ -11,5 +11,5 @@ const newsScheme = mongoose.Schema({
     credits: String,
     second_para: String
 })
-const news = mongoose.model("news", newsScheme)
+const news = mongoose.model("News", newsScheme)
 module.exports = news;
