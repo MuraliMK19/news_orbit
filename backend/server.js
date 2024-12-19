@@ -15,15 +15,12 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin: 'http://localhost:80',
+    origin: 'http://localhost:3000',
     credentials: true
 }))
 app.use(router)
 app.use("/api/news", router);
 
-app.get('/api/news/get', (req, res) => {
-    res.json([]);
-});
 
 
 const PORT = process.env.PORT || 80;

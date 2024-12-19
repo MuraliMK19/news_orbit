@@ -19,8 +19,9 @@ const getNews = async (req, res) => {
     try {
         const Allnews = await news1.find()
         res.status(201).json(Allnews)
+        console.log(Allnews);
     } catch (error) {
-        res.status(500).json({ message: "Failed to retrieve", error })
+        console.log("Failed to load news", err.response ? err.response.data : err.message);
     }
 }
 
