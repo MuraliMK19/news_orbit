@@ -3,7 +3,6 @@ import { CgProfile } from "react-icons/cg";
 
 function Navbar() {
 
-    const [activeLink, setActiveLink] = useState('');
 
     return (
         <>
