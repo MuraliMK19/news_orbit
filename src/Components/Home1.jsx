@@ -18,9 +18,10 @@ function Home1() {
             try {
                 const response = await api.get("/get");
                 setNews(response.data)
+                console.log(response.data)
             } catch (err) {
                 console.log
-                    ("Failed to load news");
+                    ("Failed to load news", err);
             }
         }
         fetchnews();
@@ -42,10 +43,10 @@ function Home1() {
                     <div className='w-1/4 p-5 bg-gray-100 rounded-xl ml-2 z-50 shadow-xl'>
                         <img src="/Images/logo.webp" alt="loading" className='h-60 w-full' />
                         <div className='flex space-x-5 text-gray-700'>
-                            <p>24th dec</p>
+                            <p>{ }</p>
                             <p>Comments</p>
                         </div>
-                        <h1 className='text-xl'>Hymn to the United Nations</h1>
+                        <h1 className='text-xl'>{ }</h1>
                         <p className='text-justify'>Get inspired by this revived W.H. Auden’s Hymn to the United Nations. "Let music for peace Be the paradigm, For peace means to change At the right time, As the World-Clock, Goes Tick and Tock.So may the story Of our human city Presently move
                         </p>
                         <hr />

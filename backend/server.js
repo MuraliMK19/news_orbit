@@ -21,6 +21,11 @@ app.use(cors({
 app.use(router)
 app.use("/api/news", router);
 
+app.get('/api/news/get', (req, res) => {
+    res.json([]);
+});
+
+
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
     console.log(`Successfully connected, ${PORT}`);
